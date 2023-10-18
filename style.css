@@ -1,29 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 
+/* Common styling for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Styling the body */
 body {
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
 
+/* Styling the heading for the page */
 h1 {
   margin: 50px;
   font-size: 48px;
 }
 
+/* Styling the image for the page */
 img {
   width: 20%;
 }
 
+/* Styling the container that contains the input field and add button */
 .container {
   padding: 50px;
 }
 
+/* Styling the input field and button */
 .form input,
 .form button {
   height: 50px;
@@ -47,6 +53,17 @@ img {
   font-weight: 500;
 }
 
+#reset{
+  width: 100px;
+  background-color: #7055d3;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Styling the list that contains all the tasks */
 #todolist {
   width: 500px;
   margin: 20px auto;
@@ -68,16 +85,8 @@ img {
   cursor: pointer;
 }
 
+/* Styling the span elements created using JavaScript */
 span{
 cursor: pointer;
 }
 
-#reset{
-  width: 100px;
-  background-color: #7055d3;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  border: none;
-  font-size: 18px;
-  font-weight: 500;
-}

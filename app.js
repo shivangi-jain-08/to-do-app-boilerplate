@@ -8,7 +8,10 @@ var subBtn = document.getElementById("button");
 var toDoListTag = document.getElementById("todolist");
 
 //an array to store all the todo elements, initially empty
-var todoArray = [];
+// var todoArray = [];
+
+var todoArray = JSON.parse(localStorage.getItem("todoArr")) || []
+display()
 
 // When Add button is clicked 
 subBtn.addEventListener("click", addItemToArray);
@@ -25,7 +28,7 @@ function addItemToArray(){
     if(inputText.value!=""){
         todoArray.push(inputText.value);
     }
-    
+    localStorage.setItem("todoArr", JSON.stringify(todoArray));
     //reset the value to empty string ""
     inputText.value = "";
     
@@ -52,13 +55,17 @@ function display(){
         //insert li inside ul tag
         toDoListTag.innerHTML += listItem;
     })
+    localStorage.setItem("todoArr", JSON.stringify(todoArray));
+
 
 }
 
 function deleteItem(index){
     //delete the element[index] from todoArray
     todoArray.splice(index, 1);
+    localStorage.setItem("todoArr", JSON.stringify(todoArray));
     display();
+
 }
 
 function editItem(index){
@@ -66,6 +73,8 @@ function editItem(index){
     var newValue = prompt("Pls Edit")
     // insert the value to the array at that index
     todoArray.splice(index, 1, newValue);
+    localStorage.setItem("todoArr", JSON.stringify(todoArray));
+
     display();
     
 }
@@ -73,7 +82,10 @@ function editItem(index){
 //reset the todo list
 document.getElementById("reset").addEventListener("click", ()=>{
     todoArray = [];
+    localStorage.setItem("todoArr", JSON.stringify(todoArray));
     display();
 })
+
+
 
 
